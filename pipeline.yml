@@ -1,0 +1,23 @@
+resources:
+- name: go-app
+  type: git
+  source: {uri: "git@github.com:topherbullock/ci-example-go.git"}
+
+- name: spring-boot-app
+  type: git
+  source: {uri: "git@github.com:topherbullock/ci-example-spring-boot.git"}
+
+jobs:
+- name: go-unit
+  plan:
+  - get: go-app
+    trigger: true
+  - task: test
+    file: go-app/ci/test.yml
+
+- name: spring-unit
+  plan:
+  - get: spring-boot-app
+    trigger: true
+  - task: test
+    file: spring-boot-app/ci/test.yml
