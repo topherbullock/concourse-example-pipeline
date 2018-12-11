@@ -1,11 +1,11 @@
 resources:
 - name: go-app
   type: git
-  source: {uri: "git@github.com:topherbullock/ci-example-go.git"}
+  source: {uri: "https://github.com/vito/booklit.git"}
 
 - name: spring-boot-app
   type: git
-  source: {uri: "git@github.com:topherbullock/ci-example-spring-boot.git"}
+  source: {uri: "https://github.com/topherbullock/ci-example-spring-boot.git"}
 
 jobs:
 - name: go-unit
